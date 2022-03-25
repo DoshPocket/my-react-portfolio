@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // Here we import a helper function that will check if the email is valid
-import { checkMessage, validateEmail } from '../../utils/helpers';
+import { checkInput, validateEmail } from '../../utils/helpers';
 
 function Form() {
   // Create state variables for the fields in the form
@@ -9,6 +9,18 @@ function Form() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const handleBlur = (e) => {
+    const { target } = e;
+    const inputType = target.name;
+    const inputValue = target.value;
+    if (!checkInput(inputValue)) {
+      setErrorMessage(
+        `A valid ${inputType} is required`
+      );
+      return;
+    }
+  }
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
@@ -18,6 +30,7 @@ function Form() {
 
     // Based on the input type, we set the state of either email, name, and message
     if (inputType === 'email') {
+      setErrorMessage('')
       setEmail(inputValue);
     } else if (inputType === 'name') {
       setName(inputValue);
@@ -37,9 +50,9 @@ function Form() {
       return;
       // Then we check to see if the message is not valid. If so, we set an error message regarding the message.
     }
-    if (!checkMessage(message)) {
+    if (!checkInput(message)) {
       setErrorMessage(
-        `Choose a more secure message for the account: ${name}`
+        `A message is required`
       );
       return;
     }
@@ -58,6 +71,7 @@ function Form() {
         <input
           value={email}
           name="email"
+          onBlur={handleBlur}
           onChange={handleInputChange}
           type="email"
           placeholder="email"
@@ -65,6 +79,7 @@ function Form() {
         <input
           value={name}
           name="name"
+          onBlur={handleBlur}
           onChange={handleInputChange}
           type="text"
           placeholder="name"
@@ -72,6 +87,7 @@ function Form() {
         <input
           value={message}
           name="message"
+          onBlur={handleBlur}
           onChange={handleInputChange}
           type="message"
           placeholder="message"
