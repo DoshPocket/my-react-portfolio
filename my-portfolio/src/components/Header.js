@@ -4,6 +4,8 @@ import AboutMe from './pages/AboutMe';
 import MyProjects from './pages/MyProjects';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import '../index.css';
+// import Footer from './pages/Footer';
 
 export default function Header() {
   const [currentPage, setCurrentPage] = useState('AboutMe');
@@ -27,7 +29,7 @@ export default function Header() {
     return (
       <Grid>
         <Grid.Column width={4}>
-          <Menu fluid vertical tabular>
+          <Menu size='massive' color='violet' fluid vertical tabular>
             <Menu.Item
               name='AboutMe'
               active={currentPage === 'AboutMe'}

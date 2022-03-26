@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Header, Divider, Segment, Image } from 'semantic-ui-react'
 
 // Here we import a helper function that will check if the email is valid
 import { checkInput, validateEmail } from '../../utils/helpers';
@@ -66,7 +67,14 @@ function Form() {
 
   return (
     <div>
-      <p>Hello {name}</p>
+      <Container textAlign='center'>
+        <Segment basic textAlign='center'>
+            <Header color='violet' as='h1'>
+                <Header.Content>Thank you for your interest in contacting me {name}</Header.Content>
+            </Header>
+        </Segment>
+      </Container>
+
       <form className="form">
         <input
           value={email}

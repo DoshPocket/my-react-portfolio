@@ -1,5 +1,7 @@
 import React from 'react';
-import { Card, Icon } from 'semantic-ui-react'
+import { Card, Icon, Button, Container, Header, Segment } from 'semantic-ui-react'
+
+
 
 const projectData = [
     {
@@ -42,12 +44,18 @@ const projectData = [
 
 const extra = (link) => (
     <a href={link} target="_blank">
-    View Project
+       <Button basic color='pink' content='View Project'/>
 </a>
   )
 
 const MyProjects = () => {
  return (
+    <Container>
+    <Segment basic textAlign='center'>
+    <Header color='violet' as='h1'>
+    <Header.Content>My Projects</Header.Content>
+    </Header>
+    </Segment>
      <>
      {projectData.map((project, i) => (
         <Card
@@ -59,8 +67,8 @@ const MyProjects = () => {
       />
      ))}
      </>
+     </Container>
  )
 }
-
 
 export default MyProjects;
