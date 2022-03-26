@@ -13,7 +13,7 @@ const Resume = () => {
     </Segment>
 </Container>
 
-<Segment basic textAlign='center'>
+<Segment style={{fontSize: 20}} basic textAlign='center'>
 
 <b>Languages:</b> SQL, HTML, CSS, Javascript, React
 <div class='ui hidden divider'></div>
@@ -23,12 +23,16 @@ const Resume = () => {
 <b>Dev-op Tools:</b> GitHub, Git, Heroku
 </Segment>
 
-<Segment basic textAlign='center'>
-    <Header className='Rockwell' color='violet' as='h2'>Resume</Header>
-</Segment>
+<Container textAlign='center'>
+    <Segment basic textAlign='center'>
+        <Header color='violet' as='h1'>
+            <Header.Content><Icon name='file pdf outline'/>Resume</Header.Content>
+        </Header>
+    </Segment>
+</Container>
 
  <a href="Docs/kenneth-resume.pdf" download="Kenneth MacLean - Full Stack Resume">
-  <Image centered size={'large'} src={process.env.PUBLIC_URL+"Images/kenneth-resume.png"} alt="Kenneth MacLean Resume"/>
+  <Image rounded centered size={'large'} src={process.env.PUBLIC_URL+"Images/kenneth-resume.png"} alt="Kenneth MacLean Resume"/>
 </a>
 
 

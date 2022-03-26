@@ -51,11 +51,11 @@ const extra = (link) => (
 const MyProjects = () => {
  return (
     <Container>
-    <Segment basic textAlign='center'>
-    <Header color='violet' as='h1'>
-    <Header.Content>My Projects</Header.Content>
-    </Header>
-    </Segment>
+        <Segment basic textAlign='center'>
+            <Header color='violet' as='h1'>
+                <Header.Content><Icon name='cubes'/>My Projects</Header.Content>
+            </Header>
+        </Segment>
      <>
      {projectData.map((project, i) => (
         <Card

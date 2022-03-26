@@ -29,23 +29,23 @@ export default function Header() {
     return (
       <Grid>
         <Grid.Column width={4}>
-          <Menu size='massive' color='violet' fluid vertical tabular>
-            <Menu.Item
+          <Menu color='violet' inverted size='massive' fluid vertical tabular>
+            <Menu.Item color='violet'
               name='AboutMe'
               active={currentPage === 'AboutMe'}
               onClick={()=> setCurrentPage('AboutMe')}
             />
-            <Menu.Item
+            <Menu.Item color='violet'
               name='MyProjects'
               active={currentPage === 'MyProjects'}
               onClick={()=> setCurrentPage('MyProjects')}
             />
-            <Menu.Item
+            <Menu.Item color='violet'
               name='Resume'
               active={currentPage === 'Resume'}
               onClick={()=> setCurrentPage('Resume')}
             />
-            <Menu.Item
+            <Menu.Item color='violet'
               name='Contact'
               active={currentPage === 'Contact'}
               onClick={()=> setCurrentPage('Contact')}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Header, Divider, Segment, Image } from 'semantic-ui-react'
+import { Container, Header, Divider, Segment, Image, Icon, Button, Input } from 'semantic-ui-react'
+import '../../index.css';
 
 // Here we import a helper function that will check if the email is valid
 import { checkInput, validateEmail } from '../../utils/helpers';
@@ -70,13 +71,13 @@ function Form() {
       <Container textAlign='center'>
         <Segment basic textAlign='center'>
             <Header color='violet' as='h1'>
-                <Header.Content>Thank you for your interest in contacting me {name}</Header.Content>
+                <Header.Content><Icon name='envelope outline'/>Thank you for your interest in contacting me {name}</Header.Content>
             </Header>
         </Segment>
       </Container>
 
       <form className="form">
-        <input
+        <Input size='huge'
           value={email}
           name="email"
           onBlur={handleBlur}
@@ -84,7 +85,7 @@ function Form() {
           type="email"
           placeholder="email"
         />
-        <input
+        <Input size='huge'
           value={name}
           name="name"
           onBlur={handleBlur}
@@ -92,7 +93,7 @@ function Form() {
           type="text"
           placeholder="name"
         />
-        <input
+        <Input size='huge'
           value={message}
           name="message"
           onBlur={handleBlur}
@@ -100,8 +101,10 @@ function Form() {
           type="message"
           placeholder="message"
         />
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
+        <Divider hidden />
+        <Button type="button" color='violet' size='tiny' onClick={handleFormSubmit}>Submit</Button>
       </form>
+      <Divider hidden />
       {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>

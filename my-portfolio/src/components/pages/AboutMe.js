@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Header, Divider, Segment, Image } from 'semantic-ui-react'
+import { Container, Header, Divider, Segment, Image, Icon, Reveal } from 'semantic-ui-react'
+document.body.classList.add('bg');
 
 const AboutMe = () => {
  return (
@@ -8,7 +9,7 @@ const AboutMe = () => {
             <Container textAlign='center'>
                 <Segment basic textAlign='center'>
                     <Header color='violet' as='h1'>
-                        <Header.Content>About Me</Header.Content>
+                        <Header.Content><Icon name='user circle'/>About Me</Header.Content>
                     </Header>
                 </Segment>
             </Container>
@@ -24,6 +25,12 @@ const AboutMe = () => {
             I taught English as a Second Language in Japan for six years and then moved back to Canada and worked in the financial sector for seven years.
 
             When I’m not melting my brain with new coding concepts, I love playing board games or guitar and spending time with my dog, Pixel.
+
+                <Reveal animated='small fade'>
+                    <Reveal.Content hidden>
+                        <Image bordered rounded size="tiny" src={process.env.PUBLIC_URL+"Images/pixel-pic.jpeg"} alt="Pixel" />
+                    </Reveal.Content>
+                </Reveal>
             </p>
             </Segment>
         </Container>
