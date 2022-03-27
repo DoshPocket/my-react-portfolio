@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Header, Divider, Segment, Image, Icon, Button, Input, Grid } from 'semantic-ui-react'
 import '../../index.css';
+import emailjs from '@emailjs/browser';
+
 
 // Here we import a helper function that will check if the email is valid
 import { checkInput, validateEmail } from '../../utils/helpers';

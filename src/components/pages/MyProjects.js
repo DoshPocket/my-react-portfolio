@@ -14,7 +14,8 @@ const projectData = [
         image: 'Images/romantic-date-planner.png',
         title: 'Romantic Date Planner',
         description: 'This application assists avid daters to save time in planning successful dates. Once a random activity is chosen, the user is presented with a search engine connected to an API relevant to the activity they can use to search for a specific date acitivty and save in to their "upcoming dates" list.',
-        link: 'https://doshpocket.github.io/romantic-date-planner/'
+        link: 'https://doshpocket.github.io/romantic-date-planner/',
+        repo: 'https://github.com/DoshPocket/romantic-date-planner'
     },
     {
         image: 'Images/jate.png',
@@ -42,10 +43,10 @@ const projectData = [
     },
 ]
 
-const extra = (link) => (
+const extra = (link, repo) => (
     <a href={link} target="_blank">
        <Button basic attached='bottom' color='violet' content='View Project'/>
-</a>
+    </a>  
   )
 
 const MyProjects = () => {
@@ -57,15 +58,15 @@ const MyProjects = () => {
             </Header>
         </Segment>
      <>
-     {projectData.map((project, i) => (
-        <Card fluid
-        key={i}
-        image={process.env.PUBLIC_URL+`${project.image}`}
-        header={project.title}
-        description={project.description}
-        extra={extra(project.link)}
-      />
-     ))}
+        {projectData.map((project, i) => (
+            <Card fluid
+            key={i}
+            image={process.env.PUBLIC_URL+`${project.image}`}
+            header={project.title}
+            description={project.description}
+            extra={extra(project.link, project.repo)}
+        />
+        ))}
      </>
      </Container>
  )
