@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Header, Divider, Segment, Image, Icon, Button, Input } from 'semantic-ui-react'
+import { Container, Header, Divider, Segment, Image, Icon, Button, Input, Grid } from 'semantic-ui-react'
 import '../../index.css';
 
 // Here we import a helper function that will check if the email is valid
@@ -67,6 +67,9 @@ function Form() {
   };
 
   return (
+    <Grid>
+    <Grid.Row columns={3}>
+      <Grid.Column width={16}>
     <div>
       <Container textAlign='center'>
         <Segment basic textAlign='center'>
@@ -75,9 +78,9 @@ function Form() {
             </Header>
         </Segment>
       </Container>
-
+      <div style={{ backgroundImage: "url(Images/bg-1.jpeg), url(Images/bg-2.jpeg)", backgroundSize: 'contain, 65%', backgroundRepeat:'no-repeat', backgroundPosition: 'left, right'}}>
       <form className="form">
-        <Input size='huge'
+        <Input size='huge' icon='at' iconPosition='left'
           value={email}
           name="email"
           onBlur={handleBlur}
@@ -85,7 +88,8 @@ function Form() {
           type="email"
           placeholder="email"
         />
-        <Input size='huge'
+                <Divider hidden />
+        <Input size='huge' icon='user circle' iconPosition='left'
           value={name}
           name="name"
           onBlur={handleBlur}
@@ -93,7 +97,8 @@ function Form() {
           type="text"
           placeholder="name"
         />
-        <Input size='huge'
+                <Divider hidden />
+        <Input size='huge' icon='comments outline' iconPosition='left'
           value={message}
           name="message"
           onBlur={handleBlur}
@@ -104,6 +109,7 @@ function Form() {
         <Divider hidden />
         <Button type="button" color='violet' size='tiny' onClick={handleFormSubmit}>Submit</Button>
       </form>
+      </div>
       <Divider hidden />
       {errorMessage && (
         <div>
@@ -111,6 +117,9 @@ function Form() {
         </div>
       )}
     </div>
+    </Grid.Column>
+        </Grid.Row>
+      </Grid>
   );
 }
 

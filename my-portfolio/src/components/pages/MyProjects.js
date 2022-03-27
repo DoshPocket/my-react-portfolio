@@ -44,7 +44,7 @@ const projectData = [
 
 const extra = (link) => (
     <a href={link} target="_blank">
-       <Button basic color='pink' content='View Project'/>
+       <Button basic attached='bottom' color='violet' content='View Project'/>
 </a>
   )
 
@@ -58,7 +58,7 @@ const MyProjects = () => {
         </Segment>
      <>
      {projectData.map((project, i) => (
-        <Card
+        <Card fluid
         key={i}
         image={process.env.PUBLIC_URL+`${project.image}`}
         header={project.title}

@@ -5,6 +5,7 @@ import MyProjects from './pages/MyProjects';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 import '../index.css';
+
 // import Footer from './pages/Footer';
 
 export default function Header() {
@@ -29,7 +30,10 @@ export default function Header() {
     return (
       <Grid>
         <Grid.Column width={4}>
-          <Menu color='violet' inverted size='massive' fluid vertical tabular>
+          <Menu  inverted size='massive' fluid vertical>
+            <Menu.Item 
+              name='Kenneth Maclean'
+            />
             <Menu.Item color='violet'
               name='AboutMe'
               active={currentPage === 'AboutMe'}
@@ -54,10 +58,6 @@ export default function Header() {
         </Grid.Column>
 
         <Grid.Column stretched width={12}>
-          {/* <Segment>
-            This is an stretched grid column. This segment will always match the
-            tab height
-          </Segment> */}
           {renderPage()}
         </Grid.Column>
       </Grid>

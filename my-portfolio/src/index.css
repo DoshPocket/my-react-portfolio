@@ -12,9 +12,15 @@
 }
 
 .purp {
-  color: rgb(68, 43, 100);
+  color: rgb(124, 66, 158);
+}
+
+.purp-bg {
+  background-color: rgb(74, 33, 97);
 }
 
 .bg {
   background-color: rgb(190, 149, 214);
 }
+
+
