@@ -1,23 +1,26 @@
 import React from 'react'
-import { Container, Grid} from 'semantic-ui-react'
+import { Container, Grid, Icon, Segment} from 'semantic-ui-react'
 
 
 const Footer = () => {
     return (
         <>
-<Container>
-
-<Grid verticalAlign='middle' columns={4} centered>
-<Grid.Row verticalAlign='bottom'>
-<Grid.Column>
-Footer
-</Grid.Column>
-
-</Grid.Row>
-
-    </Grid>
-</Container>
-
+    <Container>
+        <Grid verticalAlign='middle' columns={4} centered>
+            <Grid.Row verticalAlign='bottom'>
+                <Grid.Column>
+                <div class="ui horizontal divider">
+                    Find Me
+                </div>
+                <Segment basic textAlign='center'>
+                <a href="https://github.com/DoshPocket" target="_blank"><Icon name='github' size='huge' color='black' /></a>
+                <a href="https://www.linkedin.com/in/kenmaclean7742/" target="_blank"><Icon name='linkedin' size='huge' color='black' /></a>
+                <a href="https://stackoverflow.com/users/17743122/doshpocket?tab=profile" target="_blank"><Icon name='stack overflow' size='huge' color='black' /></a>
+                </Segment>
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
+    </Container>
 </>
  )
 }

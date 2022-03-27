@@ -1,9 +1,10 @@
 import React, { Component, useState, useEffect } from 'react'
-import { Grid, Menu } from 'semantic-ui-react'
+import { Grid, Menu, Container, Sticky } from 'semantic-ui-react'
 import AboutMe from './pages/AboutMe';
 import MyProjects from './pages/MyProjects';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import Footer from './Footer';
 import '../index.css';
 
 // import Footer from './pages/Footer';
@@ -56,10 +57,13 @@ export default function Header() {
             />
           </Menu>
         </Grid.Column>
-
         <Grid.Column stretched width={12}>
           {renderPage()}
         </Grid.Column>
+        <Container>
+          <Footer />
+          </Container>
       </Grid>
+      
     )
   }

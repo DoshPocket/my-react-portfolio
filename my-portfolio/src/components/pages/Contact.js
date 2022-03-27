@@ -107,7 +107,7 @@ function Form() {
           placeholder="message"
         />
         <Divider hidden />
-        <Button type="button" color='violet' size='tiny' onClick={handleFormSubmit}>Submit</Button>
+        <Button type="button" color='violet' size='massive' attached="bottom" onClick={handleFormSubmit}>Submit</Button>
       </form>
       </div>
       <Divider hidden />
