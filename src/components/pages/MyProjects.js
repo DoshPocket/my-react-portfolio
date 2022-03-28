@@ -8,7 +8,8 @@ const projectData = [
         image: 'Images/HiveMind-homepage.png',
         title: 'HiveMind',
         description: 'A mental health community application to connect mental health advocates in a place where they can share tips and get daily inspiration to remain mindful of their own mental health.',
-        link: 'https://hivemind-ken.herokuapp.com/'
+        link: 'https://hivemind-ken.herokuapp.com/',
+        repo: 'https://github.com/DoshPocket/Hive-Mind'
     },
     {
         image: 'Images/romantic-date-planner.png',
@@ -21,32 +22,42 @@ const projectData = [
         image: 'Images/jate.png',
         title: 'Text Editor',
         description: "A useful full-stack Node.js Express text editor which utilizes service worker to save user input after reload and upon reinitialization. The text editor is downloadable as a progressive web application to the client's local machine.",
-        link: 'https://dashboard.heroku.com/apps/text-editor-ken'
+        link: 'https://dashboard.heroku.com/apps/text-editor-ken',
+        repo: 'https://github.com/DoshPocket/text-editor'
     },
     {
         image: 'Images/note-taker.png',
         title: 'Note Taker',
         description: 'This note taker application allows the user to add new notes with a title and body and save to a list of deletable notes. When a particular note is clicked on, it is displayed again on the right side.',
-        link: 'https://note-taker-1984.herokuapp.com/'
+        link: 'https://note-taker-1984.herokuapp.com/',
+        repo: 'https://github.com/DoshPocket/note-taker'
     },
     {
         image: 'Images/employee-tracker.png',
         title: 'Employee Tracker',
         description: 'A CLI application to organize, update, and navigate employee and department data of a company. Designed to be clear and intuitive with Node.js, Inquirer, and MySQL.',
-        link: 'https://drive.google.com/file/d/1eRfyAiRAcI02TXMhNAoJTkRco1ojO0G0/view'
+        link: 'https://drive.google.com/file/d/1eRfyAiRAcI02TXMhNAoJTkRco1ojO0G0/view',
+        repo: 'https://github.com/DoshPocket/employee-tracker'
     },
     {
         image: 'Images/social.png',
         title: 'Social Network API',
         description: 'A social network api that utilizes MongooseDB to provide the user with functional and modularized routes that allow for full CRUD operations for new users, thoughts, reactions and the ability to add and remove friends from their personal networks.',
-        link: 'https://drive.google.com/drive/folders/1y_jzougDH6SMNIHVEvjXlSECkmdi8aab?usp=sharing'
+        link: 'https://drive.google.com/drive/folders/1y_jzougDH6SMNIHVEvjXlSECkmdi8aab?usp=sharing',
+        repo: 'https://github.com/DoshPocket/social-network-api'
     },
 ]
 
 const extra = (link, repo) => (
-    <a href={link} target="_blank">
-       <Button basic attached='bottom' color='violet' content='View Project'/>
-    </a>  
+    <>
+        <a href={link} target="_blank">
+        <Button basic attached='bottom' color='violet' content='View Project'/>
+        </a>  
+
+        <a href={repo} target="_blank">
+            <Button basic attached='bottom' color='violet' content='View Repo'/>
+        </a>  
+    </>
   )
 
 const MyProjects = () => {
@@ -65,11 +76,11 @@ const MyProjects = () => {
             header={project.title}
             description={project.description}
             extra={extra(project.link, project.repo)}
-        />
+            />
         ))}
      </>
      </Container>
- )
+    )
 }
 
 export default MyProjects;
