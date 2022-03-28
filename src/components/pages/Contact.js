@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Header, Divider, Segment, Image, Icon, Button, Input, Grid } from 'semantic-ui-react'
 import '../../index.css';
 import emailjs from '@emailjs/browser';
-
 
 // Here we import a helper function that will check if the email is valid
 import { checkInput, validateEmail } from '../../utils/helpers';
 
 function Form() {
+
+  const form = useRef();
+  
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_2jvt9sw', 'template_rfh806d', form.current, 'fi6DyF5liZbQqqiaz')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+    }
   // Create state variables for the fields in the form
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -60,12 +72,13 @@ function Form() {
       );
       return;
     }
-    alert(`Hello ${name}`);
-
+    alert(`Message sent successfully, ${name}`);
+    sendEmail();
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setName('');
     setMessage('');
     setEmail('');
+
   };
 
   return (
@@ -81,7 +94,7 @@ function Form() {
         </Segment>
       </Container>
       <div style={{ backgroundImage: "url(Images/bg-1.jpeg), url(Images/bg-2.jpeg)", backgroundSize: 'contain, 65%', backgroundRepeat:'no-repeat', backgroundPosition: 'left, right'}}>
-      <form className="form">
+      <form className="form" ref={form} onSubmit={sendEmail}>
         <Input size='huge' icon='at' iconPosition='left'
           value={email}
           name="email"
@@ -109,7 +122,7 @@ function Form() {
           placeholder="message"
         />
         <Divider hidden />
-        <Button type="button" color='violet' size='massive' attached="bottom" onClick={handleFormSubmit}>Submit</Button>
+        <Button type="submit" color='violet' size='massive' attached="bottom" value='Send' onClick={handleFormSubmit}>Submit</Button>
       </form>
       </div>
       <Divider hidden />
@@ -124,5 +137,6 @@ function Form() {
       </Grid>
   );
 }
+
 
 export default Form;

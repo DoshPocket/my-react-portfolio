@@ -9,7 +9,7 @@ const Footer = () => {
         <Grid verticalAlign='middle' columns={4} centered>
             <Grid.Row verticalAlign='bottom'>
                 <Grid.Column>
-                <div class="ui horizontal divider">
+                <div className="ui horizontal divider">
                     Find Me
                 </div>
                 <Segment basic textAlign='center'>

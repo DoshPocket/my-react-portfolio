@@ -8,7 +8,7 @@ const projectData = [
         image: 'Images/HiveMind-homepage.png',
         title: 'HiveMind',
         description: 'A mental health community application to connect mental health advocates in a place where they can share tips and get daily inspiration to remain mindful of their own mental health.',
-        link: ''
+        link: 'https://hivemind-ken.herokuapp.com/'
     },
     {
         image: 'Images/romantic-date-planner.png',
@@ -61,7 +61,7 @@ const MyProjects = () => {
         {projectData.map((project, i) => (
             <Card fluid
             key={i}
-            image={process.env.PUBLIC_URL+`${project.image}`}
+            image={project.image}
             header={project.title}
             description={project.description}
             extra={extra(project.link, project.repo)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Segment, Container, Header, Icon } from 'semantic-ui-react'
+import { Image, Segment, Container, Header, Icon, Label } from 'semantic-ui-react'
 import '../../index.css';
 
 const Resume = () => {
@@ -31,13 +31,11 @@ const Resume = () => {
     </Segment>
 </Container>
 
+<Container textAlign='center'>
  <a href="Docs/kenneth-resume.pdf" download="Kenneth MacLean - Full Stack Resume">
-  <Image rounded centered size={'large'} src={process.env.PUBLIC_URL+"Images/kenneth-resume.png"} alt="Kenneth MacLean Resume"/>
+  <Image rounded centered size={'large'} label={{ as: 'a', color: 'red', corner: 'left', size: 'large', icon: 'save' }} src="Images/kenneth-resume.png" alt="Kenneth MacLean Resume"/>
 </a>
-
-
-
-
+</Container>
  </>
  )
 }
