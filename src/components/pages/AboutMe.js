@@ -1,8 +1,6 @@
 import React from 'react';
-// import background from "../../../Images/bg-3.jpeg";
-import { Container, Header, Divider, Segment, Image, Icon, Reveal } from 'semantic-ui-react'
+import { Container, Header, Divider, Segment, Image, Icon } from 'semantic-ui-react'
 import '../../index.css';
-// import Footer from '../Footer';
 document.body.classList.add('bg');
 
 
@@ -38,9 +36,6 @@ const AboutMe = () => {
                 </p>
             </Segment>
         </Container>
-        {/* <Container>
-        <Footer />
-        </Container> */}
     </>
  )
 }

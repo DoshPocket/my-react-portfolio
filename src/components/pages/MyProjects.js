@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, Icon, Button, Container, Header, Segment } from 'semantic-ui-react'
 
-
-
 const projectData = [
     {
         image: 'Images/HiveMind-homepage.png',
@@ -58,7 +56,7 @@ const extra = (link, repo) => (
             <Button basic attached='bottom' color='violet' content='View Repo'/>
         </a>  
     </>
-  )
+)
 
 const MyProjects = () => {
  return (

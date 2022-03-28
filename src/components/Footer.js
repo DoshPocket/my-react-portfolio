@@ -5,7 +5,7 @@ import { Container, Grid, Icon, Segment} from 'semantic-ui-react'
 const Footer = () => {
     return (
         <>
-    <Container>
+    <Container className='footer'>
         <Grid verticalAlign='middle' columns={4} centered>
             <Grid.Row verticalAlign='bottom'>
                 <Grid.Column>
